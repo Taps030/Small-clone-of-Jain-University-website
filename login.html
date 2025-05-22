@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>University Student Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-blue-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg flex max-w-4xl w-full">
+        <div class="hidden md:flex md:w-1/2 items-center justify-center p-8">
+            <img alt="Illustration of a computer with a graduation cap and diploma" class="w-full h-auto" height="400" src="top-university-of-india.jpg" width="400"/>
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+            <div class="flex justify-between items-center mb-8">
+                <a class="text-gray-500 text-xl" href="#" onclick="showPage('login')">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a class="text-gray-500 text-xl" href="#">
+                    <i class="fas fa-globe"></i>
+                    www.jainuniversity.ac.in 
+                </a>
+            </div>
+            <div id="login-page">
+                <div class="text-center mb-8">
+                    <img alt="University logo" class="mx-auto mb-4" height="100" src="JAIN_University_Logo.jpg" width="100"/>
+                    <h1 class="text-2xl font-bold">UNIVERSITY NAME</h1>
+                    <p class="text-blue-500">STUDENT PANEL</p>
+                </div>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="enrollment">Enrollment number</label>
+                        <input class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" id="enrollment" type="text"/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <label class="block text-gray-700" for="password">Password</label>
+                        <input class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" id="password" type="password"/>
+                        <i class="fas fa-eye absolute right-2 top-10 text-gray-500"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="flex items-center">
+                            <input class="form-checkbox h-4 w-4 text-blue-500" type="checkbox"/>
+                            <span class="ml-2 text-gray-700">Remember me</span>
+                        </label>
+                        <a class="text-gray-500" href="#">Forgot Password?</a>
+                    </div>
+                    <button class="w-full bg-blue-500 text-white py-2 rounded-lg" type="button" onclick="showPage('internship')">Sign in</button>
+                </form>
+            </div>
+            <div id="internship-page" class="hidden">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold">Internship Program</h1>
+                    <p class="text-gray-700">Our college offers a comprehensive internship program that provides students with hands-on experience in their field of study. The program is designed to bridge the gap between academic learning and real-world application.</p>
+                </div>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg mb-4" onclick="showPage('courses')">Next: Courses</button>
+                <button class="w-full bg-gray-500 text-white py-2 rounded-lg" onclick="showPage('login')">Back to Login</button>
+            </div>
+            <div id="courses-page" class="hidden">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold">Courses Offered</h1>
+                    <p class="text-gray-700">We offer a variety of courses across different disciplines. Our curriculum is designed to provide students with a strong foundation in their chosen field of study.</p>
+                </div>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg mb-4" onclick="showPage('faculty')">Next: Faculty</button>
+                <button class="w-full bg-gray-500 text-white py-2 rounded-lg" onclick="showPage('internship')">Back to Internship</button>
+            </div>
+            <div id="faculty-page" class="hidden">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold">Our Faculty</h1>
+                    <p class="text-gray-700">Our faculty members are experts in their fields and are dedicated to providing students with a high-quality education. They bring a wealth of knowledge and experience to the classroom.</p>
+                </div>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg mb-4" onclick="showPage('contact')">Next: Contact Us</button>
+                <button class="w-full bg-gray-500 text-white py-2 rounded-lg" onclick="showPage('courses')">Back to Courses</button>
+            </div>
+            <div id="contact-page" class="hidden">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold">Contact Us</h1>
+                    <p class="text-gray-700">If you have any questions or need further information, please feel free to contact us. We are here to help you.</p>
+                </div>
+                <button class="w-full bg-gray-500 text-white py-2 rounded-lg" onclick="showPage('faculty')">Back to Faculty</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showPage(page) {
+            document.getElementById('login-page').classList.add('hidden');
+            document.getElementById('internship-page').classList.add('hidden');
+            document.getElementById('courses-page').classList.add('hidden');
+            document.getElementById('faculty-page').classList.add('hidden');
+            document.getElementById('contact-page').classList.add('hidden');
+            document.getElementById(page + '-page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
